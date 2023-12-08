@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>zHospital</title>
+	<meta name="description" content="Free Responsive Html5 Css3 Templates | zerotheme.com">
+	<meta name="author" content="www.zerotheme.com">
+	
+    <!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- CSS
+  ================================================== -->
+  	<link rel="stylesheet" href="css/zerogrid.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	
+	<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+		<script src="js/html5.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+	<![endif]-->
+    
+</head>
+<body id="archive">
+<div class="wrap-body">
+
+<!--////////////////////////////////////Header-->
+<header>
+	<div class="top-bar">
+		<div class="wrap-top zerogrid">
+			<div class="row">
+				<div class="col-1-2">
+					<div class="wrap-col">
+						<ul>
+							<li class="mail"><p>u10606256@ms.ttu.edu.tw</p></li>
+							<li class="phone"><p>(02)2316-7736</p></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="wrap-header">
+		<div class="zerogrid">
+			<div class="row">
+				<div class="col-1-3">
+					<div class="wrap-col">
+						<div class="logo"><a href="#"><img src="images/logo.png"/></a></div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="wrap-banner">
+		<div id="menu">
+			<nav>
+				<div class="wrap-nav">
+					<ul>
+						<li><a href="Home.html">Home</a></li>
+						<li><a href="AboutUs.html">About Us</a></li>
+						<li class="active"><a href="account.html">Account</a></li>
+						<li><a href="devices.html">Devices</a></li>
+						<li><a href="Forum.html">Forum</a></li>
+					  </ul>
+			   </div>
+			</nav>
+		</div>
+		<div class="zerogrid">
+			<div class="col-2-3">
+				<div class="wrap-col">
+					<div class="top-title">
+						<form action="login.php" method="post"> <!-- 這裡的 "login.php" 應該是處理登入資訊的伺服器端腳本 -->
+							<font color="blue"><label for="username">使用者名稱:</label></font>
+								<input type="text" id="username" name="username" required><br><br>
+		
+							<font color="blue"><label for="password">密碼:</label></font>
+						<input type="password" id="password" name="password" required><br><br>	
+						<input type="submit" value="登入">
+			</form>
+		</body>
+	</div>
+</header>
+
+<script>
+
+	// Get the credit card info input elements
+	var cardNumberInput = document.getElementById("card-number");
+	var expiryDateInput = document.getElementById("expiry-date");
+	var cvvInput = document.getElementById("cvv");
+  
+	// Get the bank exchange info input elements
+	var bankNameInput = document.getElementById("bank-amount");
+	var bankAccountInput = document.getElementById("bank-account");
+	var bankCodeInput = document.getElementById("bank-code");
+  
+	// Add event listener to the payment type select element
+	paymentTypeSelect.addEventListener("change", function() {
+	
+  
+	  // Get the selected payment type
+	  var selectedPaymentType = paymentTypeSelect.value;
+  
+	  // Show or hide divisions based on the selected payment type
+	  if (selectedPaymentType === "credit-card") {
+		creditCardInfoDiv.style.display = "block";
+		bankExchangeInfoDiv.style.display = "none";
+  
+		// Add the required attribute to credit card inputs
+		cardNumberInput.required = true;
+		expiryDateInput.required = true;
+		cvvInput.required = true;
+  
+		// Remove the required attribute from bank exchange inputs
+		bankNameInput.required = false;
+		bankAccountInput.required = false;
+		bankCodeInput.required = false;
+	  } else if (selectedPaymentType === "bank-exchange") {
+	  
+		creditCardInfoDiv.style.display = "none";
+		bankExchangeInfoDiv.style.display = "block";
+  
+		// Remove the required attribute from credit card inputs
+		cardNumberInput.required = false;
+		expiryDateInput.required = false;
+		cvvInput.required = false;
+  
+		// Add the required attribute to bank exchange inputs
+		bankNameInput.required = true;
+		bankAccountInput.required = true;
+		bankCodeInput.required = true;
+	  }
+  
+	});
+	
+			
+		  // Create and dispatch a change event
+	  var changeEvent = new Event("change");
+	  paymentTypeSelect.dispatchEvent(changeEvent);
+  
+  </script>
+
+
+<!--////////////////////////////////////Footer-->
+<footer>
+	<div class="zerogrid">
+		<div class="wrap-footer">
+			<div class="row">
+				<div class="col-1-4">
+					<div class="wrap-col">
+						<div class="widget wid-about">
+							<div class="wid-header">
+								<h5>Welcome</h5>
+							</div>
+							<div class="logo"><a href="#"><img src="images/logo.png"/></a></div>
+							<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque quod maxime placeat 
+								facere possimus nihil impedit quo minus id quod maxime placeat facere possimus. </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-1-4">
+					<div class="wrap-col">
+						<div class="widget wid-meta">
+							<div class="wid-header">
+								<h5>Links List</h5>
+							</div>
+							<div class="widget-content">
+								<div class="row">
+									<ul>
+										<li><a href="#">> Lorem ipsum dolor sit </a></li>
+										<li><a href="#">> Nullam venenatis lacus a </a></li>
+										<li><a href="#">> Morbi ut sapien nec nisl</a></li>
+										<li><a href="#">> Integer a enim ac ex.</a></li>
+										<li><a href="#">> Sed in nunc non eleifend  </a></li>
+										<li><a href="#">> Integer a enim ac ex.</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-1-4">
+					<div class="wrap-col">
+						<div class="widget wid-tag">
+						<div class="wid-header">
+							<h5>Tags</h5>
+						</div>
+						<div class="wid-content">
+							<a href="#">animals ,</a>
+							<a href="#">cooking ,</a>
+							<a href="#">countries ,</a>
+							<a href="#">home ,</a>
+							<a href="#">likes ,</a>
+							<a href="#">photo ,</a>
+							<a href="#">travel ,</a>
+							<a href="#">video </a>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="col-1-4">
+					<div class="wrap-col">
+						<div class="widget wid-meta">
+							<div class="wid-header">
+								<h5>Links List</h5>
+							</div>
+							<div class="widget-content">
+								<div class="row">
+									<ul>
+										<li><a href="#">> Lorem ipsum dolor sit </a></li>
+										<li><a href="#">> Nullam venenatis lacus a </a></li>
+										<li><a href="#">> Morbi ut sapien nec nisl</a></li>
+										<li><a href="#">> Integer a enim ac ex.</a></li>
+										<li><a href="#">> Sed in nunc non eleifend  </a></li>
+										<li><a href="#">> Integer a enim ac ex.</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bottom-footer">
+		<div class="wrap-bottom ">
+			<div class="copyright">
+				<p>??2015 - Designed by <a href="https://www.zerotheme.com" title="free website Templates">ZEROTHEME</a></p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+</div>
+</body></html>

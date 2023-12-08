@@ -1,0 +1,41 @@
+/*
+Zerotheme.com | Free Html5 Responsive Templates
+Author URI: https://www.zerotheme.com/
+*/
+
+html { -webkit-text-size-adjust: none;}
+.video embed,.video object,.video iframe { width: 100%;  height: auto;}
+img{max-width:100%;	height: auto;width: auto\9; /* ie8 */}
+
+
+
+
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
+	#archive article img{width: 100%;}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	#archive article img{width: 100%;}
+}
+
+@media only screen and (max-width: 800px) {
+	
+	header .wrap-banner{ height: 750px; }
+	.content-box.box-3 .wrap {padding-top: 0px;}
+.content-box.box-5 .wrap {padding-top: 0px;}
+#archive article img{width: 100%;}
+}
+
+@media only screen and (max-width: 468px) {
+header .top-title h1{font-size: 14px;}
+
+header .wrap-banner{ height: 1100px; }
+
+.content-box.box-3 .wrap-box {padding:30px 10px; position: relative;}
+.content-box.box-5 .wrap-box {padding:30px 10px; position: relative; vertical-align:middle;}
+.content-box.box-3 p{line-height:0.8;}
+.content-box.box-5 p{line-height:0.8;}
+.content-box.box-3 .wrap {padding-top: 0px;}
+.content-box.box-5 .wrap {padding-top: 0px;}
+}
+
