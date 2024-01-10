@@ -18,14 +18,14 @@
     
     <!-- CSS
   ================================================== -->
-  	<link rel="stylesheet" href="css/zerogrid.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="/www/css/zerogrid.css">
+  <link rel="stylesheet" href="/www/css/style.css">
+  <link rel="stylesheet" href="/www/css/responsive.css">
 	
 	<!--[if lt IE 8]>
        <div style=' clear: both; text-align:center; position: relative;'>
          <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+           <img src="http://storage.ie6countdown.com/assets/100www/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
         </a>
       </div>
     <![endif]-->
@@ -33,11 +33,24 @@
 		<script src="js/html5.js"></script>
 		<script src="js/css3-mediaqueries.js"></script>
 	<![endif]-->
-    
+	
 </head>
 <body id="single">
-<div class="wrap-body">
-
+	<div class="wrap-body"></div>
+<!-- 
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/foundation.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/zerogrid.css">
+	<link rel="stylesheet" href="css/industrial.css">
+	<link rel="stylesheet" href="css/introjs.min.css">
+	<link rel="stylesheet" href="css/foundation.css"> -->
+	
+  <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
 <!--////////////////////////////////////Header-->
 <header>
 	<div class="top-bar">
@@ -59,7 +72,7 @@
 			<div class="row">
 				<div class="col-1-3">
 					<div class="wrap-col">
-						<div class="logo"><a href="#"><img src="images/logo.png"/></a></div>	
+						<div class="logo"><a href="#"><img src="/www/images/logo.png"/></a></div>	
 					</div>
 				</div>
 			</div>
@@ -70,9 +83,9 @@
 			<nav>
 				<div class="wrap-nav">
 					<ul>
-						<li><a href="Home.html">Home</a></li>
+						<li><a href="http://127.0.0.1:5000/">Home</a></li>
 						<li><a href="AboutUs.html">About Us</a></li>
-						<li><a href="account.html">Account</a></li>
+						<li><a href="Account.html">Account</a></li>
 						<li class="active"><a href="devices.html">Devices</a></li>
 						<li><a href="Forum.html">Forum</a></li>
 					</ul>
@@ -82,305 +95,106 @@
 		  	<div class="zerogrid">
 				<div class="col-2-3">
 					<div class="wrap-col">
-						<div class="top-title"><font color='red'>
+						<div class="top-title"><font color='1B335D'>
 							<form id="payment-form" action="/payment" method="get">
-								<h1>MEDICAL PROFESSIONALS</h1>
-								<br>
-								<label for="payment-type">Payment Type:</label>
-									<select id="payment-type" name="payment-type">
-				  						<option value="credit-card">Credit Card</option>
-				  						<option value="bank-exchange">Bank Exchange</option>
-									</select>
-								<div id="credit-card-info">
-				  			<h3>Credit Card Details</h3> <font color='red'> <span id='message'> xxxxx </span> </font>
-				  				<label for="card-number">Credit Card Number:</label>
-				  					<input type="text" id="card-number" name="card-number" placeholder="Enter your credit card number" required>
-				  				<label for="expiry-date">Expiry Date:</label>
-				    				<input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
-				  				<label for="cvv">CVV:</label>
-				  					<input type="text" id="cvv" name="cvv" placeholder="CVV" required>
-					</div>
-			  
-					<div id="bank-exchange-info">
-				  			<h3>Bank Exchange Details</h3>
-				  				<label for="bank-code">Bank Code:</label>
-				  					<input type="text" id="bank-code" name="bank-code" placeholder="Enter the bank code" required>
-				  				<label for="bank-account">Bank Account Number:</label>
-				  					<input type="text" id="bank-account" name="bank-account" placeholder="Enter your bank account number" required>
-				  				<label for="bank-amount">Bank amount:</label>
-				  					<input type="text" id="bank-amount" name="bank-amount" placeholder="Enter the the amount of money " required>
-			  
-			  
-				</div>
-				<br>
-				<input type="submit" value="Submit Payment">
-				 <button type="button" id="submit-payment">Pay</button>
-			  </form>
+								<h1>Devices</h1>
+							</form></font>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-1-3">
-				<div class="wrap-col">
-					&nbsp
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
-<script>
+			</div> 
 
-	// Get the payment type select element
-	var paymentTypeSelect = document.getElementById("payment-type");
-  
-	// Get the credit card info and bank exchange info divisions
-	var creditCardInfoDiv = document.getElementById("credit-card-info");
-	var bankExchangeInfoDiv = document.getElementById("bank-exchange-info");
-  
-	// Show the credit card info division by default
-	creditCardInfoDiv.style.display = "block";
-	bankExchangeInfoDiv.style.display = "none";
-  
-	// Get the credit card info input elements
-	var cardNumberInput = document.getElementById("card-number");
-	var expiryDateInput = document.getElementById("expiry-date");
-	var cvvInput = document.getElementById("cvv");
-  
-	// Get the bank exchange info input elements
-	var bankNameInput = document.getElementById("bank-amount");
-	var bankAccountInput = document.getElementById("bank-account");
-	var bankCodeInput = document.getElementById("bank-code");
-  
-	// Add event listener to the payment type select element
-	paymentTypeSelect.addEventListener("change", function() {
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+		var TempisConnected = false;
+		var HumidisConnected = false;
+
+    socket.on('mqtt_message', function(data) {
+    // 構建消息字符串
+    var messageString;
+
+    // 使用 switch case 根據不同的主題進行處理
+    switch (data.topic) {
+        case "MQTT/reset/LC2":
+			TempisConnected = true;
+			messageString = '<strong>' + '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;室內溫度' + '</strong>: ' + data.payload+ '°C';
+            break;
+        case "MQTT/reset/LC3":
+			HumidisConnected = true;
+			messageString = '<strong>' + '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;室內濕度:' + '</strong> ' + data.payload+ 'PH';
+            break;
+        case "MQTT/reset/LC4":
+			if(data.payload == 1)
+				messageString = '<strong>' + '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;偵測到重量' + '</strong>';
+			else
+				messageString = '<strong>' + '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;未偵測到重量' + '</strong>: ';
+			break;
+        case "MQTT/reset/LC5":
+			messageString = '<strong>' + '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;熱指數' + '</strong>: ' + data.payload;
+            break;
+        case "MQTT/reset/LC6":
+			messageString = '<strong>' + '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;水量' + '</strong>: ' + data.payload+ 'cc';
+            break;
+        case "MQTT/reset/LC7":
+            messageString = '<strong>' + '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;室外溫度' + '</strong>: ' + data.payload+ '°C';
+            break;
+        case "MQTT/reset/LC8":
+            messageString = '<strong>' + '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;室外濕度' + '</strong>: ' + data.payload+ 'PH';
+            break;
+        default:
+            messageString = '<strong>' + '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;未知主題' + '</strong>: ' + data.payload;
+            break;
+    }
+	var existingItem = document.getElementById('LC_' + data.topic.split('/').pop());
+    if (existingItem) {
+        existingItem.innerHTML = messageString;
+    } else {
+        // 創建新的 <li> 元素
+        var listItem = document.createElement('li');
+        listItem.id = 'LC_' + data.topic.split('/').pop();
+        listItem.innerHTML = messageString;
+
+        // 將新元素添加到 <ul> 中
+        document.getElementById('mqttData').appendChild(listItem);
+    }
+});
+
+	function checkTemperatureConnection() {
+        if (TempisConnected) {
+            document.getElementById('Tempconnection-status').innerHTML = '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Temperature Sensor Connected';
+        } else {
+            document.getElementById('Tempconnection-status').innerHTML = '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Temperature Sensor disconnected';
+        }
+    }
 	
-  
-	  // Get the selected payment type
-	  var selectedPaymentType = paymentTypeSelect.value;
-  
-	  // Show or hide divisions based on the selected payment type
-	  if (selectedPaymentType === "credit-card") {
-		creditCardInfoDiv.style.display = "block";
-		bankExchangeInfoDiv.style.display = "none";
-  
-		// Add the required attribute to credit card inputs
-		cardNumberInput.required = true;
-		expiryDateInput.required = true;
-		cvvInput.required = true;
-  
-		// Remove the required attribute from bank exchange inputs
-		bankNameInput.required = false;
-		bankAccountInput.required = false;
-		bankCodeInput.required = false;
-	  } else if (selectedPaymentType === "bank-exchange") {
-	  
-		creditCardInfoDiv.style.display = "none";
-		bankExchangeInfoDiv.style.display = "block";
-  
-		// Remove the required attribute from credit card inputs
-		cardNumberInput.required = false;
-		expiryDateInput.required = false;
-		cvvInput.required = false;
-  
-		// Add the required attribute to bank exchange inputs
-		bankNameInput.required = true;
-		bankAccountInput.required = true;
-		bankCodeInput.required = true;
-	  }
-  
-	});
-	
-			
-		  // Create and dispatch a change event
-	  var changeEvent = new Event("change");
-	  paymentTypeSelect.dispatchEvent(changeEvent);
-  
-  </script>
-  
-  
-  
-  
-  <script>
-	// Get the form element
-	var paymentForm = document.getElementById("payment-form");
-  
-	// Add an event listener to the form submission
-	paymentForm.addEventListener("submit", function(event) {
-	//  event.preventDefault(); // Prevent form submission
-  
-	  // Get the payment type select element and its value
-	  var paymentTypeSelect = document.getElementById("payment-type");
-	  var paymentType = paymentTypeSelect.value;
-  
-	  // Get the credit card info and bank exchange info input elements
-	  var cardNumberInput = document.getElementById("card-number");
-	  var expiryDateInput = document.getElementById("expiry-date");
-	  var cvvInput = document.getElementById("cvv");
-	  var bankNameInput = document.getElementById("bank-amount");
-	  var bankAccountInput = document.getElementById("bank-account");
-	  var bankCodeInput = document.getElementById("bank-code");
-  
-	  // Create an object to store the payment information
-	  var paymentInfo = {};
-  
-	  // Store the payment type in the object
-	  paymentInfo["Payment Type"] = paymentType;
-  
-	  // Store the credit card info or bank exchange info based on the payment type
-	  if (paymentType === "credit-card") {
-	  
-  
-		paymentInfo["Card Number"] = cardNumberInput.value;
-		paymentInfo["Expiry Date"] = expiryDateInput.value;
-		paymentInfo["CVV"] = cvvInput.value;
-  
-	  } else if (paymentType === "bank-exchange") {
-		paymentInfo["Bank Name"] = bankNameInput.value;
-		paymentInfo["Bank Account"] = bankAccountInput.value;
-		paymentInfo["Bank Code"] = bankCodeInput.value;
-	  }
-  
-	  // Print the payment information to the console
-	  console.log("Payment Information:");
-	  console.log(paymentInfo);
-	});
-  </script>
+	function checkHumidityConnection() {
+        if (HumidisConnected) {
+            document.getElementById('Humconnection-status').innerHTML = '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Humidity Sensor Connected';
+        } else {
+            document.getElementById('Humconnection-status').innerHTML = '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Humidity Sensor disconnected';
+        }
+    }
+
+	setInterval(checkTemperatureConnection, 2000);
+	setInterval(checkHumidityConnection, 2000);
+	</script>
+		<strong id="mqttData"></strong>
+		<br><br><br>
+		<strong id="Tempconnection-status">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Temperature disconnected</strong>
+		<br><br>
+		<strong id="Humconnection-status">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Humidity disconnected</strong>
+	</div>
+	</ul>
+</header>
+<body>
+
+
+</body>  
 
 <!--////////////////////////////////////Container-->
-<section id="container">
-	<div class="wrap-container clearfix">
-		<div class="zerogrid">
-			<div id="main-content" class="col-2-3">
-				<div class="wrap-content">
-					<div class="contact">
-						<h2>Contact</h2>
-						<div id="contact_form">
-							<form name="form1" id="ff" method="post" action="contact.php">
-								<label>
-								<span>Enter your name:</span>
-								<input type="text"  name="name" id="name" required>
-								</label>
-								<label>
-								<span>Enter your email:</span>
-								<input type="email"  name="email" id="email" required>
-								</label>
-								<label>
-								<span>Your message here:</span>
-								<textarea name="message" id="message"></textarea>
-								</label>
-								<center><input class="sendButton" type="submit" name="Submit" value="Submit"></center>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="sidebar" class="col-1-3">
-				<div class="wrap-sidebar">
-					<!---- Start Widget ---->
-					<div class="widget wid-about">
-						<div class="wid-header">
-							<h5>About Us</h5>
-						</div>
-						<div class="wid-content">
-							<img src="images/15.jpg"/>
-							<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-						</div>
-					</div>
-					<!---- Start Widget ---->
-					<div class="widget wid-tag">
-						<div class="wid-header">
-							<h5>Tags</h5>
-						</div>
-						<div class="wid-content">
-							<a href="#">animals ,</a>
-							<a href="#">cooking ,</a>
-							<a href="#">countries ,</a>
-							<a href="#">home ,</a>
-							<a href="#">likes ,</a>
-							<a href="#">photo ,</a>
-							<a href="#">travel ,</a>
-							<a href="#">video </a>
-						</div>
-					</div>
-					<!---- Start Widget ---->
-					<div class="widget wid-post">
-						<div class="wid-header">
-							<h5>Latest Posts</h5>
-						</div>
-						<div class="wid-content">
-							<div class="post">
-								<a href="#"><img src="images/15.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">A Blue Morning</a></h5><br>
-								  <p>March 1, 2015</p>
-								</div>
-							</div>
-							<div class="post">
-								<a href="#"><img src="images/15.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">A Blue Morning</a></h5><br>
-								  <p>March 1, 2015</p>
-								</div>
-							</div>
-							<div class="post">
-								<a href="#"><img src="images/15.jpg"/></a>
-								<div class="wrapper">
-								  <h5><a href="#">A Blue Morning</a></h5><br>
-								  <p>March 1, 2015</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!---- Start Widget ---->
-					<div class="widget wid-archive">
-						<div class="wid-header">
-							<h5>Archives</h5>
-						</div>
-						<div class="wid-content">
-							<select>
-							    <option value="audi" selected>Select Month</option>
-								<option value="volvo">March 2015</option>
-								<option value="saab">Febuary 2015</option>
-								<option value="vw">VW</option>
-							</select>
-						</div>
-					</div>
-					<!---- Start Widget ---->
-					<div class="widget wid-gallery">
-						<div class="wid-header">
-							<h5>Gallery</h5>
-						</div>
-						<div class="wid-content">
-							<a href="#"><img src="images/15.jpg"></a>
-							<a href="#"><img src="images/15.jpg"></a>
-							<a href="#"><img src="images/15.jpg"></a>
-							<a href="#"><img src="images/15.jpg"></a>
-							<a href="#"><img src="images/15.jpg"></a>
-							<a href="#"><img src="images/15.jpg"></a>
-						</div>
-					</div>
-					<div class="widget wid-meta">
-						<div class="wid-header">
-							<h5>Meta</h5>
-						</div>
-						<div class="wid-content">
-							<div class="row">
-								<ul>
-									<li><a href="#">> Lorem ipsum dolor sit amet, consectetur elit.</a></li>
-									<li><a href="#">> Nullam venenatis lacus a elit fermentum.</a></li>
-									<li><a href="#">> Morbi ut sapien nec nisl pulvinar suscipit.</a></li>
-									<li><a href="#">> Integer a enim ac ex porta molestie ut at ex.</a></li>
-									<li><a href="#">> Sed in nunc non eleifend laoreet eu quis elit.</a></li>
-									<li><a href="#">> Nullam venenatis lacus fermentum.</a></li>
-									<li><a href="#">> Lorem ipsum dolor sit amet, consectetur elit.</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>	
-	</div>
-</section>
+
 
 <!--////////////////////////////////////Footer-->
 <footer>
@@ -393,9 +207,8 @@
 							<div class="wid-header">
 								<h5>Welcome</h5>
 							</div>
-							<div class="logo"><a href="#"><img src="images/logo.png"/></a></div>
-							<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque quod maxime placeat 
-								facere possimus nihil impedit quo minus id quod maxime placeat facere possimus. </p>
+							<div class="logo"><a href="#"><img src="www/images/logo.png"/></a></div>
+							<p>這個居家照護系統可以提供家庭成員對被照護者的更多關心和支持，同時提供實時信息，以確保被照護者的福祉。該專題結合了硬體設計、感測技術和程式開發，為居家照護領域帶來了有價值的創新。 </p>
 						</div>
 					</div>
 				</div>
@@ -408,52 +221,12 @@
 							<div class="widget-content">
 								<div class="row">
 									<ul>
-										<li><a href="#">> Lorem ipsum dolor sit </a></li>
-										<li><a href="#">> Nullam venenatis lacus a </a></li>
-										<li><a href="#">> Morbi ut sapien nec nisl</a></li>
-										<li><a href="#">> Integer a enim ac ex.</a></li>
-										<li><a href="#">> Sed in nunc non eleifend  </a></li>
-										<li><a href="#">> Integer a enim ac ex.</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-1-4">
-					<div class="wrap-col">
-						<div class="widget wid-tag">
-						<div class="wid-header">
-							<h5>Tags</h5>
-						</div>
-						<div class="wid-content">
-							<a href="#">animals ,</a>
-							<a href="#">cooking ,</a>
-							<a href="#">countries ,</a>
-							<a href="#">home ,</a>
-							<a href="#">likes ,</a>
-							<a href="#">photo ,</a>
-							<a href="#">travel ,</a>
-							<a href="#">video </a>
-						</div>
-					</div>
-					</div>
-				</div>
-				<div class="col-1-4">
-					<div class="wrap-col">
-						<div class="widget wid-meta">
-							<div class="wid-header">
-								<h5>Links List</h5>
-							</div>
-							<div class="widget-content">
-								<div class="row">
-									<ul>
-										<li><a href="#">> Lorem ipsum dolor sit </a></li>
-										<li><a href="#">> Nullam venenatis lacus a </a></li>
-										<li><a href="#">> Morbi ut sapien nec nisl</a></li>
-										<li><a href="#">> Integer a enim ac ex.</a></li>
-										<li><a href="#">> Sed in nunc non eleifend  </a></li>
-										<li><a href="#">> Integer a enim ac ex.</a></li>
+										<li><a href="https://reurl.cc/r64kvN">> 衛服部居家照護 </a></li>
+										<li><a href="https://reurl.cc/ka3kdr">> 長照2.0懶人包</a></li>
+										<li><a href="https://reurl.cc/K3LEdp">> 台北市衛服部長照2.0服務區</a></li>
+										<li><a href="https://www.clc.org.tw/index.php">> 社團法人中華長照協會  </a></li>
+										<li><a href="https://reurl.cc/NyLOOQ">> 快速尋找附近的長照服務</a></li>
+										<li><a href="https://reurl.cc/l74nYd">> 各縣市長期照顧管理中心聯繫窗口</a></li>
 									</ul>
 								</div>
 							</div>
@@ -466,7 +239,7 @@
 	<div class="bottom-footer">
 		<div class="wrap-bottom ">
 			<div class="copyright">
-				<p>??2015 - Designed by <a href="https://www.zerotheme.com" title="free website Templates">ZEROTHEME</a></p>
+				<p>pierce@2023 - Designed by <a href="https://www.zerotheme.com">Pierce</a></p>
 			</div>
 		</div>
 	</div>

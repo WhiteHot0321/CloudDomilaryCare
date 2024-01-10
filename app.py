@@ -36,12 +36,29 @@ mqtt_client.loop_start()
 # Flask路由
 @app.route('/')
 def index():
-    return render_template('devices.html')
+    return render_template('Home.html')
+
+@app.route('/AboutUs.html')
+def about_us():
+    return render_template('AboutUs.html')
+
+@app.route('/Account.html')
+def account():
+    return render_template('Account.html')
+
+@app.route('/Devices.html')
+def devices():
+    return render_template('Devices.html')
+
+@app.route('/Forum.html')
+def forum():
+    return render_template('Forum.html')
 
 # SocketIO事件處理
 @socketio.on('connect')
 def handle_connect():
     print('Client connected')
+
 
 if __name__ == '__main__':
     socketio.run(app, debug=True)
